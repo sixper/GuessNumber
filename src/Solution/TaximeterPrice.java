@@ -10,16 +10,26 @@ public class TaximeterPrice {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Gidilen Kilometre : ");
+        System.out.print("Dairenin Yarıçapını Giriniz : ");
+        double radius = input.nextInt();
+        System.out.print("Merkezi açı ölçüsünü giriniz : ");
+        double angle = input.nextInt();
 
-        double km = input.nextInt();
+        final double pi = 3.14;
 
-        double price = 10 + (km * 2.2);
+        double area = pi * radius * radius;
+        double perimeter = 2 * pi * radius;
 
-        if(price < 20)
-            System.out.println("\nTaksimetre tutarı: 20.0 TL.");
-        else
-            System.out.println("Taskimetre tutarı: " + price + " TL.");
+        double angleArea = (pi * radius * radius * angle) / 360;
+
+
+        System.out.println("\nDairenin Alanı: " + area);
+        System.out.println("Dairenin Çevresi: " + perimeter);
+
+        System.out.println("\nYarıçapı " + radius + " açı ölçüsü " + angle + " derece olan daire dilimini alanı: " + angleArea);
+
+
+
 
 
 
