@@ -2,7 +2,7 @@ package Solution;
 
 import java.util.*;
 
-public class CalculateVAT {
+public class CalculateHypotenuse {
 
 
     public static void main(String[] args) {
