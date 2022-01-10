@@ -2,7 +2,7 @@ package Solution;
 
 import java.util.*;
 
-public class Zodiac {
+public class ZodiacSign {
 
 
     public static void main(String[] args) {
