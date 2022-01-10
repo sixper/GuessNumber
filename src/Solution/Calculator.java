@@ -10,43 +10,44 @@ public class Calculator {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("İlk sayıyı giriniz: ");
-        double firstNum = input.nextInt();
+        String userName;
+        String password;
 
-        System.out.print("İkinci sayıyı giriniz: ");
-        double secondNum = input.nextInt();
+        System.out.print("\nKullanıcı adınızı giriniz: ");
+        userName = input.nextLine();
 
-        System.out.println("\nYapılacak işlemi belirtiniz: ");
-        System.out.println("1. Toplama ");
-        System.out.println("2. Çıkarma ");
-        System.out.println("3. Çarpma ");
-        System.out.println("4. Bölme ");
+        System.out.print("Şifrenizi Giriniz: ");
+        password = input.nextLine();
 
-        int operation = input.nextInt();
+        if(userName.equals("sixper")){
+
+            if(password.equals("deneme123"))
+                System.out.println("Başarıyla giriş yaptınız.");
+            else{
+
+                System.out.print("\nŞifrenizi yanlış girdiniz. Sıfırlamak ister misiniz ? E/H: ");
+                if(input.nextLine().equals("E")){
+
+                    System.out.print("Yeni şifrenizi giriniz: ");
+                    String newPassword = input.nextLine();
+                    if(newPassword.equals("deneme123") || newPassword.equals(password))
+                        System.out.print("Yeni şifre eskisi ile aynı olamaz.");
+                    else{
+
+                        password = newPassword;
+                        System.out.println("Yeni şifre başarı ile oluşturuldu.");
+
+                    }
 
 
-        switch (operation){
+                }
+            }
+        }else
+            System.out.println("Kullanıcı adınızı yanlış girdiniz.");
 
 
-            case 1:
-                System.out.println(firstNum + " + " + secondNum + " = " + (firstNum + secondNum));
-                break;
 
-            case 2:
-                System.out.println(firstNum + " - " + secondNum + " = " + (firstNum - secondNum));
-                break;
 
-            case 3:
-                System.out.println(firstNum + " * " + secondNum + " = " + (firstNum * secondNum));
-                break;
-
-            case 4:
-                System.out.println(firstNum + " / " + secondNum + " = " + (firstNum / secondNum));
-                break;
-
-            default:
-                System.out.println("Tanımsız seçim.");
-        }
 
         input.close();
 
