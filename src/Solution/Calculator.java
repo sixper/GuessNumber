@@ -10,42 +10,47 @@ public class Calculator {
 
         Scanner input = new Scanner(System.in);
 
-        String userName;
-        String password;
+        double math,physic,turkish,chemistry,music;
+        double average = 0;
 
-        System.out.print("\nKullanıcı adınızı giriniz: ");
-        userName = input.nextLine();
+        System.out.print("Matematik notunuzu giriniz: ");
+        math = input.nextInt();
 
-        System.out.print("Şifrenizi Giriniz: ");
-        password = input.nextLine();
+        System.out.print("Fizik notunuzu giriniz: ");
+        physic = input.nextInt();
 
-        if(userName.equals("sixper")){
+        System.out.print("Türkçe notunuzu giriniz: ");
+        turkish = input.nextInt();
 
-            if(password.equals("deneme123"))
-                System.out.println("Başarıyla giriş yaptınız.");
-            else{
+        System.out.print("Kimya notunuzu giriniz: ");
+        chemistry = input.nextInt();
 
-                System.out.print("\nŞifrenizi yanlış girdiniz. Sıfırlamak ister misiniz ? E/H: ");
-                if(input.nextLine().equals("E")){
+        System.out.print("Müzik notunuzu giriniz: ");
+        music = input.nextInt();
 
-                    System.out.print("Yeni şifrenizi giriniz: ");
-                    String newPassword = input.nextLine();
-                    if(newPassword.equals("deneme123") || newPassword.equals(password))
-                        System.out.print("Yeni şifre eskisi ile aynı olamaz.");
-                    else{
+        if(math >= 0 && math <= 100)
+            average += math;
 
-                        password = newPassword;
-                        System.out.println("Yeni şifre başarı ile oluşturuldu.");
+        if(physic >= 0 && physic <= 100)
+            average += physic;
 
-                    }
+        if(turkish >= 0 && turkish <= 100)
+            average += turkish;
 
+        if(chemistry >= 0 && chemistry <= 100)
+            average += chemistry;
 
-                }
-            }
-        }else
-            System.out.println("Kullanıcı adınızı yanlış girdiniz.");
+        if(music >= 0 && music <= 100)
+            average += music;
 
+        average /= 5;
 
+        System.out.println("Not ortalamanız: " + average);
+
+        if(average >= 55)
+            System.out.println("Tebrikler sınıfı geçtiniz.");
+        else
+            System.out.println("Sınıfta kaldınız");
 
 
 
