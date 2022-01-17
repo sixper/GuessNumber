@@ -2,7 +2,7 @@ package Solution;
 
 import java.util.*;
 
-public class Fibonacci {
+public class FibonacciMethod {
 
     public static void main(String[] args) {
 
